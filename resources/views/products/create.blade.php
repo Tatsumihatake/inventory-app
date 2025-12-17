@@ -28,7 +28,7 @@
 
                         <div class="mb-3">
                             <label class="form-label">Kategori</label>
-                            <select name="category_id" class="form-select" required>
+                            <select name="category_id" class="form-select select2" required>
                                 <option value="">-- Pilih Kategori --</option>
                                 @foreach($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -39,7 +39,7 @@
 
                         <div class="mb-3">
                             <label class="form-label">Supplier</label>
-                            <select name="supplier_id" class="form-select" required>
+                            <select name="supplier_id" class="form-select select2" required>
                                 <option value="">-- Pilih Supplier --</option>
                                 @foreach($suppliers as $supplier)
                                     <option value="{{ $supplier->id }}">{{ $supplier->name }}</option>

@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class SupplierController extends Controller
 {
-    public function index()
+public function index()
     {
-        $suppliers = Supplier::latest()->get();
+        
+        $suppliers = Supplier::latest()->paginate(5); 
         return view('suppliers.index', compact('suppliers'));
     }
 

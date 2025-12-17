@@ -21,7 +21,9 @@
                     <tr>
                         <th>No</th>
                         <th>Nama Produk</th>
-                        <th>Kategori</th> <th>Supplier</th> <th>Harga</th>
+                        <th>Kategori</th>
+                        <th>Supplier</th>
+                        <th>Harga</th>
                         <th>Stok</th>
                         <th>Aksi</th>
                     </tr>
@@ -29,7 +31,8 @@
                 <tbody>
                     @forelse($products as $product)
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $loop->iteration + ($products->currentPage() - 1) * $products->perPage() }}</td>
+                        
                         <td class="fw-bold">{{ $product->name }}</td>
                         
                         <td><span class="badge bg-info text-dark">{{ $product->category->name }}</span></td>
@@ -65,6 +68,11 @@
                     @endforelse
                 </tbody>
             </table>
+
+            <div class="mt-3">
+                {{ $products->links() }}
+            </div>
+            
         </div>
     </div>
 </div>
